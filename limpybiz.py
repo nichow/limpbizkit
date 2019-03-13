@@ -16,10 +16,10 @@ def quality_content():
 
 def retweet_durst():
     global last_rt
-    data = Twython.get_user_timeline(screen_name='freddurst', count=1)
+    data = twitter.get_user_timeline(screen_name='freddurst', count=1)
     if data['id'] != last_rt:
         last_rt = data['id']
-        Twython.retweet(id=last_rt)
+        twitter.retweet(id=last_rt)
 
 
 schedule.every().day.at('16:24').do(quality_content())
