@@ -26,7 +26,7 @@ def retweet_durst():
     global last_rt
     data = twitter.get_user_timeline(screen_name='freddurst', count=1)
     if data['id'] != last_rt:
-        last_rt = data['id']
+        last_rt = data[0]['id']
         twitter.retweet(id=last_rt)
 
 
